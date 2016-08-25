@@ -1,0 +1,43 @@
+<div class="jumbotron">
+<h1>Welcome to the Bat Store!</h1>
+<p>make me happy if you got what you want to got!</p>
+</div>
+
+<div class="row">
+	<% @products.each do |product| %>
+		<div class="col-mid-4">
+			<div class="well center-it">
+				<p><%= image_tag product.image.url %></p>
+				<h3><%= link_to product.name, product %></h3>
+				<p><%= number_to_currency product.price %></p>
+				<p>
+					<a href="#" data-toggle="modal" data-target="#myModal_<%= product.id %>">
+						<i class="glyphicon glyphicon-plus"></i> Quick Info
+					</a>
+				</p>
+			</div>
+		</div>
+		<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+		<% end %>
+	</div>
+
